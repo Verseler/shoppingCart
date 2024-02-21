@@ -9,8 +9,9 @@ import Men from "./pages/MenSection";
 
 function App() {
   return (
-    <Router>
-      <Header />
+    <div className="w-full min-h-screen bg-primary">
+      <Router>
+      <Header cartedItemCount={3} />
       <Routes>
         <Route path="/" element={<Home />} errorElement={<ErrorPage />} />
         <Route path="/cart" element={<Cart />} />
@@ -19,6 +20,7 @@ function App() {
         <Route path="/men" element={<Men />} />,
       </Routes>
     </Router>
+    </div>
   );
 }
 

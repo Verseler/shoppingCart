@@ -59,11 +59,11 @@ export default function Home() {
     </p>
   );
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className="absolute right-20 top-20">Loading...</div>;
 
   return (
-    <div className="px-4 xl:max-w-[95%] xl:m-auto">
-      <main className="m-auto mt-20 w-max">
+    <div className="relative px-4 xl:max-w-[95%] xl:m-auto">
+      <main className="py-20 m-auto w-max">
         <div className="mb-4">
           <h1 className="text-4xl font-extrabold">Luxury Ukay</h1>
           {productSizeResult}

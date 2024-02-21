@@ -6,6 +6,7 @@ export default {
   ],
   theme: {
     fontSize: {
+      '3xs': '0.5rem',
       '2xs': '0.6rem',
       'xs' : '0.7rem',
       sm: '0.8rem',
@@ -16,7 +17,11 @@ export default {
       '4xl': '2.441rem',
       '5xl': '3.052rem',
     },
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#fffef5'
+      },
+    },
   },
   plugins: [],
 }
