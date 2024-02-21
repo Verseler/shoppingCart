@@ -4,7 +4,7 @@ export default function Home() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const productSize = products.length;
-
+  
   useEffect(() => {
     getProducts();
   }, []);
@@ -25,10 +25,10 @@ export default function Home() {
 
   /* UI */
   const productsTable = products.map((product) => (
-    <div className="w-72 h-max" key={product.id}>
+    <div className="border border-zinc-100 w-72 h-max" key={product.id}>
       <div>
         <div className="flex items-center justify-between p-2">
-          <p>${product.price}</p>
+          <p className="text-sm font-bold">${product.price}</p>
           <button>
             {" "}
             <span className="transition-colors cursor-pointer text-zinc-400 material-symbols-outlined active:text-yellow-500">
@@ -36,12 +36,13 @@ export default function Home() {
             </span>
           </button>
         </div>
-        <div className="w-full h-56 aspect-square">
-          <img className="object-contain w-full h-full" src={product.image} />
+        
+        <div className="w-full h-56 ">
+          <img className="object-contain w-3/4 m-auto h-3/4" src={product.image} />
         </div>
       </div>
 
-      <div className="flex items-center justify-between px-4 border-t-2 gap-x-6 h-14">
+      <div className="flex items-center justify-between px-4 border-t-2 border-t-zinc-100 gap-x-6 h-14">
         <p className="text-xs font-bold line-clamp-2">{product.title}</p>
         <button>
           <span className="text-yellow-500 transition-colors cursor-pointer material-symbols-outlined active:text-black">
@@ -61,13 +62,13 @@ export default function Home() {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div className="px-4  xl:max-w-[95%] xl:m-auto">
+    <div className="px-4 xl:max-w-[95%] xl:m-auto">
       <main className="m-auto mt-20 w-max">
         <div className="mb-4">
           <h1 className="text-4xl font-extrabold">Luxury Ukay</h1>
-          {productSize}
+          {productSizeResult}
         </div>
-        <div className="grid grid-cols-4 gap-0.5 border-2 border-zinc-100 bg-zinc-100">
+        <div className="grid grid-cols-2 border border-zinc-100 md:grid-cols-3 xl:grid-cols-4">
           {productsTable}
         </div>
       </main>
