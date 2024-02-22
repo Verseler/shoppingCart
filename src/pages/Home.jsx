@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function Home() {
+export default function Home({addCart}) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const productSize = products.length;
@@ -14,7 +14,7 @@ export default function Home() {
       const url = "https://fakestoreapi.com/products";
       const response = await fetch(url);
       const data = await response.json();
-      // console.log(products)
+    
       setProducts(data);
     } catch (error) {
       console.log(error);
@@ -44,7 +44,7 @@ export default function Home() {
 
       <div className="flex items-center justify-between px-4 border-t-2 border-t-zinc-100 gap-x-6 h-14">
         <p className="text-xs font-bold line-clamp-2">{product.title}</p>
-        <button>
+        <button onClick={() => addCart(product)}>
           <span className="text-yellow-500 transition-colors cursor-pointer material-symbols-outlined active:text-black">
             shopping_cart
           </span>

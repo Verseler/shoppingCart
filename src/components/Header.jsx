@@ -1,11 +1,17 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export default function Header({ cartedItemCount }) {
+export default function Header({ cartedItemsCount }) {
+
+
+
+
+
   const cartCount = (
     <div className="absolute bg-transparent bottom-5 left-4">
-      {cartedItemCount >= 1 && (
+      {cartedItemsCount >= 1 && (
         <p className="flex items-center justify-center w-4 h-4 pt-0.5 text-white bg-yellow-500 rounded-full text-2xs">
-          {cartedItemCount}{" "}
+          {cartedItemsCount}{" "}
         </p>
       )}
     </div>
@@ -36,7 +42,7 @@ export default function Header({ cartedItemCount }) {
             </li>
           </ul>
         </nav>
-        <button className="relative">
+        <button className="relative ms-20">
           {cartCount}
           <Link to="cart"><span className="transition-colors cursor-pointer material-symbols-outlined hover:text-yellow-500">
             shopping_cart
