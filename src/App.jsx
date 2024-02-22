@@ -29,9 +29,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home addCart={addCart} />} errorElement={<ErrorPage />} />
         <Route path="/cart" element={<Cart cartedItems={cart} deleteCart={deleteCart} />} />
-        <Route path="/jewerly" element={<Jewerly />} />,
-        <Route path="/women" element={<Women />} />,
-        <Route path="/men" element={<Men />} />,
+        <Route path="/jewerly" element={<Jewerly deleteCart={deleteCart} />} />,
+        <Route path="/women" element={<Women deleteCart={deleteCart} />} />,
+        <Route path="/men" element={<Men deleteCart={deleteCart} />} />,
       </Routes>
     </Router>
     </div>
